@@ -1,4 +1,11 @@
 <li><a href="/">Home</a></li>
 <li><a href="/gallery">Gallery</a></li>
-<li><a href="/blog">Blog</a></li>
+<li class="dropdown">
+    <a class="drop-trigger" href="/blog">Blog</a>
+<!--    <span class="drop-trigger">Blog</span>-->
+    <ul class="drop-menu">
+        <li>Recent Posts</li>
+        {% include recent_posts.html%}
+    </ul>
+</li>
 <li><a href="{{ site.posts.first.url }}">Newest Post</a></li>
