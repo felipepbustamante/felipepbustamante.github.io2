@@ -8,7 +8,14 @@ function activateGallery(){
 
     thumbnails.forEach(function (thumbnail) {
         thumbnail.addEventListener("click", function () {
+
+            // Preload large images.
+
+
             let newImageSrc = thumbnail.dataset.largeVersion;
+            let largeVersion = new Image();
+            largeVersion.src = newImageSrc;
+
             let newAlt = thumbnail.alt;
             mainImage.setAttribute("src", newImageSrc);
             mainImage.setAttribute("alt", newAlt);
